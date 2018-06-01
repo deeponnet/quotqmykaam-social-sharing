@@ -1,0 +1,128 @@
+function clepex_constructor(){
+	this.currentURL = window.location.href;
+	this.forwardURL = "";
+	this.json = {
+		url_clean: true,
+		dataLength: undefined,
+		data : {}
+	};
+	this.querySymbol = "#";
+	this.readyURL = "";
+
+	this.cleanURL = function(){
+		return this.currentURL.split("#clepex=")[0];
+	}
+	this.shoot = function(){
+		if(this.isReady()){
+			this.config();
+			window.location.href = this.readyURL;
+		}
+		else{
+			console.log("clepex error >> href is not specified");
+		}
+	};
+	this.add = function(key, value){
+		this.json.data[key] = value;
+		return this;
+	};
+	this.href = function(url, type){
+		switch(type){
+			case "rel":
+			case "relative":
+				var relPath = window
+							.location.pathname
+							.split("/")
+							.slice(0, -1)
+							.join("/");
+				url = window.location.origin + relPath + (url[0]=="/"?url:("/"+url));
+				break;
+			case "abs":
+			case "absolute":
+				// do nothing
+				break;
+			case ("base"):
+				url += window.location.origin; 
+				break;
+			default:
+				// do nothing
+				break;
+		}
+		if(url.indexOf("#")>=0){
+			this.json.url_clean = false;
+		}
+		this.forwardURL = url;
+		return this;
+	};
+	this.setObject = function(obj){
+		this.json.data = obj;
+		return this;
+	};
+	this.config = function(){
+		if(this.forwardURL == undefined){
+			this.forwardURL = this.currentURL;
+		}
+		else{
+			this.readyURL = this.forwardURL + "#clepex="+this.URIEncodedJSON();
+		}
+	};
+	this.URIEncodedJSON = function(){
+		var temp = JSON.stringify(this.json);
+		temp = encodeURIComponent(temp);
+		return temp;
+	};
+	this.isReady = function(){
+		return this.forwardURL == ""?false:true;
+	};
+	this.get = function(key){
+		if(this.json.data[key]){
+			console.log("clepex get >> " + key + ":" + this.json.data[key]);
+			return this.json.data[key];
+		}
+		else{
+			console.log("clepex warning >> No clepex data found. Possibly, you are on the sender page now.");
+			return (undefined);
+		}
+	};
+	this.getObject = function(){
+		console.log("clepex getObject >> Check the object below");
+		return this.json.data;
+	};
+
+	// Initialization Function
+
+	this.init = function(){
+		var clepexString = this.currentURL.split("#clepex=");
+		var encodedJSONString = clepexString[1];
+		
+		if(encodedJSONString == undefined || encodedJSONString == null){
+			console.log("clepex hello >> Welcome Dev! ");
+			this.json = {
+				url_clean: true,
+				dataLength: undefined,
+				data : {}
+			};
+		}
+		else{
+			console.log("clepex hello >> Clepex data found! :)");
+			var decodedJSONString = decodeURIComponent(encodedJSONString);
+			this.json = JSON.parse(decodedJSONString);
+		}
+
+		if(this.json.url_clean == false){
+			var anchor = this.currentURL.split("#")[1];
+			var nodeToScroll = document.getElementById(anchor);
+			if(nodeToScroll != undefined && nodeToScroll != null){
+				var scrollY = nodeToScroll.offsetTop - nodeToScroll.scrollTop + nodeToScroll.clientTop; 
+				window.scrollTo(0,scrollY);
+			}
+			else{
+				console.log("clepex error >> could not find the anchor mentioned.");
+				console.log("clepex error >> Element with id = \"" + anchor + "\" could not be found");
+			}
+		}
+		console.log("clepex hello >> Clepex is all set!");
+	};
+};
+
+var clepex = new clepex_constructor();
+clepex.init();

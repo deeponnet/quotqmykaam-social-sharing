@@ -1,0 +1,391 @@
+.cpy, .email, .footer-container, .i-row, .i-row .i-element, footer {
+    position: relative
+}
+
+footer {
+    font-family: Lato;
+    background: #69a4d2;
+    box-sizing: border-box;
+    padding: 50px 20px
+}
+
+.footer-container {
+    margin: 0 auto;
+    height: auto;
+    width: 100%;
+    max-width: 1200px
+}
+
+.about-contact-row {
+    margin-bottom: 40px
+}
+
+.i-row .i-element {
+    float: left
+}
+
+.about-us {
+    width: calc(60% - 50px)
+}
+
+.contact-us {
+    width: 40%;
+    float: right !important
+}
+
+.cities-we-serve {
+    width: calc(50% - 25px)
+}
+
+.app-t-and-c {
+    width: calc(30% - 25px);
+    margin-left: 50px
+}
+
+.follow-us {
+    width: 20%;
+    text-align: center
+}
+
+.app-t-and-c img {
+    height: 70px
+}
+
+.cities-we-serve .city {
+    width: calc(50% - 10px);
+    padding: 10px;
+    background: rgba(0, 0, 0, .05);
+    color: rgba(255, 255, 255, .7);
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 6px;
+    border: 0;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 7.5px;
+    margin-bottom: 7.5px
+}
+
+.cities-we-serve .city:nth-child(even) {
+    margin-left: 17px
+}
+
+.i-element .title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    text-indent: 15px;
+    letter-spacing: 2px
+}
+
+.i-element .i-modal {
+    background: rgba(0, 0, 0, .05);
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 10px;
+    color: rgba(255, 255, 255, .7);
+    line-height: 1.5;
+    font-size: 15px
+}
+
+.cities-we-serve .i-modal {
+    padding: 15px 20px
+}
+
+.d-app .i-modal {
+    background: 0 0;
+    padding: 0
+}
+
+.d-app {
+    margin-bottom: 15px
+}
+
+.t-and-c {
+    width: 100%
+}
+
+.t-and-c .i-modal {
+    height: 157px
+}
+
+.follow-us {
+    height: 100%
+}
+
+.follow-container {
+    margin-left: calc(50% - 25px);
+    margin-top: 20px
+}
+
+.follow-us img {
+    height: 50px;
+    display: block;
+    margin-bottom: 20px
+}
+
+.footer-horiz-line {
+    margin: 40px 0 20px;
+    background: #fff;
+    opacity: .7;
+    height: 4px;
+    border-radius: 2px
+}
+
+.cpy, .email {
+    float: left;
+    color: #fff
+}
+
+.middle-x {
+    position: absolute;
+    left: 50%;
+    transform: translate3d(-50%, 0, 0);
+    color: #fff
+}
+
+.email {
+    float: right
+}
+
+.clear {
+    clear: both
+}
+
+@media screen and (max-width:768px) {
+    .d-app .i-modal {
+        margin-top: 38px
+    }
+
+    .t-and-c, .t-and-c .i-modal {
+        height: auto !important
+    }
+
+    .about-contact-row {
+        margin-bottom: 0
+    }
+
+    .about-us, .app-t-and-c, .cities-we-serve, .contact-us, .follow-us {
+        width: 100%;
+        margin-bottom: 20px
+    }
+
+    .app-t-and-c {
+        margin-left: 0;
+        margin-bottom: 0
+    }
+
+    .d-app {
+        position: relative;
+        float: left
+    }
+
+    .t-and-c {
+        margin-left: 20px;
+        width: calc(100% - 236px)
+    }
+
+    .t-and-c .title {
+        padding-left: 15px;
+        text-indent: 0
+    }
+
+    .email {
+        display: none
+    }
+
+    .middle-x {
+        right: 0;
+        left: auto;
+        transform: translate3d(0, 0, 0)
+    }
+
+    .follow-us {
+        margin-top: 20px
+    }
+
+    .follow-us img {
+        display: inline-block;
+        margin: 0 30px
+    }
+
+    .follow-container {
+        margin-left: 0
+    }
+
+    .footer-horiz-line {
+        margin-top: 20px
+    }
+
+    footer {
+        padding: 25px 20px
+    }
+}
+
+@media screen and (max-width:450px) {
+    .d-app, .t-and-c {
+        width: 100%
+    }
+
+    .d-app .i-modal, .d-app .title, .t-and-c .title {
+        text-align: center
+    }
+
+    .follow-us img {
+        display: inline-block;
+        margin: 0 15px
+    }
+
+    .d-app .i-modal {
+        margin-top: 15px
+    }
+
+    .t-and-c {
+        margin-left: 0
+    }
+}
+
+@media screen and (max-width:400px) {
+    footer {
+        padding: 20px 10px
+    }
+}
+
+.footer .about-us {
+    border-right: 0 !important
+}
+
+div.col-md-12.col-sm-12.col-xs-12.customers-reviews {
+    padding: 0
+}
+
+.cust-review-list h4 {
+    text-align: center !important
+}
+
+.cust-review-list h4 div.rating-box {
+    margin-left: 10px;
+    padding: 2px 10px;
+    font-size: 12px;
+    line-height: 1.5
+}
+
+.cust-review-list p {
+    text-align: justify !important;
+    font-style: inherit !important;
+    margin: 10px 0
+}
+
+.cust-review-list .img-container {
+    text-align: center;
+    margin-bottom: 20px;
+    height: 120px;
+    overflow: hidden
+}
+
+.cust-review-list .img-container img {
+    height: 100%;
+    border-radius: 100px;
+    overflow: hidden
+}
+
+/* .full-view-client, .headline.new-title {
+    display: none !important
+} */
+
+#h1-text-wrapper {
+    width: 100%;
+    line-height: 1.5
+}
+
+#h1-text-wrapper span {
+    display: block;
+    font-size: 16px;
+    color: #e1e1e1
+}
+
+.hiw-img-container {
+    text-align: center
+}
+
+.wu-row {
+    padding: 20px 15px
+}
+
+.wu-img-container {
+    display: inline-block;
+    width: calc(50% - 10px)
+}
+
+.wu-img-container-right {
+    margin-left: 12px;
+    border: 1px solid #c8c8c8
+}
+
+.services-footer-container-desktop {
+    font-family: Open Sans, inherit !important
+}
+
+.link-wrapper {
+    border: 2px solid #fff;
+    display: inline-block;
+    padding: 5px 15px;
+    color: #fff;
+    border-radius: 6px;
+    margin-right: 10px;
+    cursor: pointer
+}
+
+.link-wrapper:hover {
+    background: #fff
+}
+
+.link-wrapper a, footer a {
+    color: #fff !important
+}
+
+.link-wrapper:hover a {
+    color: #69a4d2 !important
+}
+
+.link-wrapper{
+margin-top:10px;
+}
+
+@media screen and (max-width:768px){
+    .wu-img-container{
+        display:block;
+        width:100%;
+    }
+    .wu-img-container-right{
+        margin-left:0;
+        margin-top:10px;
+    }
+}
+.fa-star:before{
+    content: "\2605" !important;
+}
+
+.serviceAddressComponent{
+
+z-index: 999 !important;
+
+}
+ul.nav.navbar-nav.navbar-right li{
+    font-weight: 700;
+}
+ul.nav.navbar-nav.navbar-right li:nth-child(3){
+    background: #74a5d0;
+    border-radius: 5px;
+    margin-right: 25px;
+}
+ul.nav.navbar-nav.navbar-right li:nth-child(3) a{
+    color: white !important;
+}
+@media screen and (max-width:768px){
+    ul.nav.navbar-nav.navbar-right li:nth-child(3){
+    	margin-right: 15px;
+        margin-left: 15px;
+        margin-bottom: 10px;
+	}
+}
